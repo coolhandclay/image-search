@@ -1,9 +1,9 @@
 var request = require('request');
 var apikey = process.env.BING_API_KEY;
 
-module.exports = function(param, callback) {
+module.exports = function(param, count, callback) {
      var options = {
-        url: 'https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=' + param,
+        url: 'https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=' + param + '&count=' + count.toString(),
         headers: {
             'Ocp-Apim-Subscription-Key': apikey
         }

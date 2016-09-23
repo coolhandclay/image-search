@@ -7,17 +7,16 @@ var MongoClient = mongodb.MongoClient;
 var url = process.env.MONGOLAB_URI;
 
 //INSTRUCTIONS//
-app.get('/', function(req,res) {
-   res.end('Hello! Search an image.');
-});
+app.use('/', express.static(__dirname + '/public'));
 
 //SEARCH//
 app.get('/api/imagesearch/*', function(req,res) {
     var query = req.params[0];
+    var count = req.query['count'];
     var callback = function(output) {
         res.end(JSON.stringify(output));
     };
-    imgsearch(query, callback);
+    imgsearch(query, count, callback);
     MongoClient.connect(url, function(err, db) {
         if(err) throw err;
         var searches = db.collection('searches');
