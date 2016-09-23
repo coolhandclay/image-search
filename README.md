@@ -1,6 +1,30 @@
 # image-search
 Image search abstraction layer microservice - a la Free Code Camp
 
-1) Search an image by adding to URL the path '/api/imagesearch/QUERY'
-
-2) See latest searches by adding to URL the path '/latest/imagesearch/'
+ <body>
+        <div class="container">
+            <h1 class="header">
+                Clay's Image Search Abstraction Layer
+            </h1>
+            <blockquote>
+                Current features:
+                <ul>
+                    <li> You can pass a query, and it will image search the query through Bing's Image API.</li>
+                    <li> Optionally, you can limit number of results with a '?count=10' query.</li>
+                    <li> You can see the latest searches made.</li>
+                    <li> To return to these instructions don't include a parameter</li> 
+                </ul>
+            </blockquote>
+            <h3>Example usage:</h3>
+            <code>'https://clay-image-search.herokuapp.com/api/imagesearch/lolcats?count=1'</code><br>
+            <code>'https://clay-image-search.herokuapp.com/latest/imagesearch/'</code>
+            <h3>Example output:</h3>
+            <code>
+                {
+                  "title": "Rosey675's Weirdly Awesome Panfu Blog: LOLcats",
+                  "url": "http://www.bing.com/cr?IG=8C5C26CB63044069A818B63A8D24FBC7&CID=0308A02AD13D64B50B09A9B3D00C656F&rd=1&h=YAmfK7ABOCOl7-yUDfFHjzFHHD1vzBeF8qr3F-JmQuY&v=1&r=http%3a%2f%2f3.bp.blogspot.com%2f-dZNLWrpHVdQ%2fUG4PoBq4NLI%2fAAAAAAAAA_c%2f6Yt4S1CgiiQ%2fs1600%2fLOLCATS2.jpg&p=DevEx,5008.1",
+                  "size": "33008 B"
+                }
+            </code>
+        </div>
+    </body>
